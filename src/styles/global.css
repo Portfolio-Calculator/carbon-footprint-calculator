@@ -1,0 +1,13 @@
+.title {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-size: 4rem;
+    font-weight: bold;
+    font-weight: 600;
+    padding-top: 200px;
+    color: rgb(102, 55, 4);
+    font-family: "Arial", sans-serif;
+    font-size: 45px;
+  }
+  
