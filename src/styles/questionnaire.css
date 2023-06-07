@@ -74,6 +74,25 @@
   width: 24px;
   height: 24px;
   margin-right: 8px;
+  animation: wiggle 1s ease-in-out infinite;
+}
+
+@keyframes wiggle {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-2px) rotate(-5deg);
+  }
+  50% {
+    transform: translateX(2px) rotate(5deg);
+  }
+  75% {
+    transform: translateX(-2px) rotate(-5deg);
+  }
+  100% {
+    transform: translateX(0) rotate(0);
+  }
 }
 
 .question label {
