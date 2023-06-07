@@ -3,12 +3,17 @@ import React from "react";
 import "../styles/result.css";
 import PieChart from "../components/PieChart";
 import Recommendations from "@/components/Recommendations";
-import { useRouter } from "next/g";
+import { useSearchParams } from "next/navigation";
 
 const Result = () => {
-  const router = useRouter();
-  const { gasBill, electricBill, recycle, carMileage, flightsUnder4Hours, flightsOver4Hours } = router.query;
-  console.log(gasBill, electricBill, recycle, carMileage, flightsUnder4Hours, flightsOver4Hours)
+  const searchParams = useSearchParams();
+  const gasBill = searchParams.get("gasBill");
+  console.log('gasBill', gasBill);
+  const electricBill = searchParams.get("electricBill");
+  const recycle = searchParams.get("recycle");
+  const carMileage = searchParams.get("carMileage");
+  const flightsUnder4Hours = searchParams.get("flightsUnder4Hours");
+  const flightsOver4Hours = searchParams.get("flightsOver4Hours");
 
   let electric = electricBill * 105;
   let gas = gasBill * 105;
@@ -56,7 +61,7 @@ const Result = () => {
         <p>Flights under 4 Hours: {flightsUnder4Hours}</p>
         <p>Flights over 4 Hours: {flightsOver4Hours}</p>
         <PieChart data={data}/>
-        <div>TOTAL : {total} </div>
+        <div>{total} LBS of CO2</div>
     </div>
       <Recommendations />
     </div>
