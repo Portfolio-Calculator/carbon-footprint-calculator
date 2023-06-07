@@ -1,24 +1,29 @@
 'use client';
 import React from "react";
-import '../styles/result.css';
+import "../styles/result.css";
 import PieChart from "../components/PieChart";
+import Recommendations from "@/components/Recommendations";
+import { useRouter } from "next/g";
 
-const result = () => {
+const Result = () => {
+  const router = useRouter();
+  const { gasBill, electricBill, recycle, carMileage, flightsUnder4Hours, flightsOver4Hours } = router.query;
+  console.log(gasBill, electricBill, recycle, carMileage, flightsUnder4Hours, flightsOver4Hours)
 
-  let electric = 100 * 105;
-  let gas = 100 * 105;
-  let carYearlyCareMileage = 10000 * .79;
-  let numShortFlights = 1 * 1100;
-  let numLongFlights = 2 * 4400;
+  let electric = electricBill * 105;
+  let gas = gasBill * 105;
+  let carYearlyCareMileage = carMileage * .79;
+  let numShortFlights = flightsUnder4Hours * 1100;
+  let numLongFlights = flightsOver4Hours * 4400;
   let totalFlights = numShortFlights + numLongFlights;
-  let doesRecycle = false ? 350 : 0;
+  let doesRecycle = recycle ? 350 : 0;
   let total = electric + gas + carYearlyCareMileage + totalFlights + doesRecycle;
 
   const data = {
     labels: ['Electric', 'Gas', 'Car', 'Flights', 'Recycle'],
     datasets: [
       {
-        label: '# of Votes',
+        label: 'lbs of CO2',
         data: [electric, gas, carYearlyCareMileage, totalFlights, doesRecycle],
         backgroundColor: [
           'rgba(255, 99, 132)',
@@ -40,13 +45,22 @@ const result = () => {
   };
 
   return (
-    <div className="container">
-      <div className="backgroundImage"></div>
-      <h1>Result</h1>
-      <PieChart data={data}/>
-      <div>TOTAL : {total}</div>
+    <div>
+      <div className="container">
+        <div className="backgroundImage"></div>
+        <h1>Result</h1>
+        <p>Gas Bill: {gasBill}</p>
+        <p>Electric Bill: {electricBill}</p>
+        <p>Recycle: {recycle}</p>
+        <p>Car Mileage: {carMileage}</p>
+        <p>Flights under 4 Hours: {flightsUnder4Hours}</p>
+        <p>Flights over 4 Hours: {flightsOver4Hours}</p>
+        <PieChart data={data}/>
+        <div>TOTAL : {total} </div>
+    </div>
+      <Recommendations />
     </div>
   );
 };
 
-export default result;
+export default Result;
