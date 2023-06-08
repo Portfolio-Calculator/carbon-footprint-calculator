@@ -10,14 +10,14 @@ function Recommendation(props) {
     (recommendation) => recommendation.title === title
   );
 
-  const decsription = matchingRecommendation
+  const description = matchingRecommendation
     ? matchingRecommendation.description
     : "An invalid recommendation was requested.";
 
   return (
     <div className="flex flex-col items-center justify-center h-90vh">
       <h1 className="text-4xl font-bold">{title}</h1>
-      <p>{decsription}</p>
+      <p>{description}</p>
     </div>
   );
 }
