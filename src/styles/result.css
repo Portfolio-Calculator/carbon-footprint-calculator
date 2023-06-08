@@ -23,39 +23,44 @@
 }
 
 .custom-tab-list {
-  display: flex;
-  margin-bottom: 10px;
-  justify-content: center;
+display: flex;
+margin-bottom: 10px;
+justify-content: center;
 }
+
 
 .custom-tab {
-  padding: 10px 20px;
-  background-color: #051a3b;
-  border: 1px solid #ccc;
-  border-bottom: none;
-  border-radius: 5px 5px 0 0;
-  cursor: pointer;
-  color: #ffffff; /* Tab text color */
-  font-weight: bold; /* Make the tab text bold */
-  text-align: center; /* Center align the tab text */
+padding: 10px 20px;
+background-color: #ffaf00;
+border: 1px solid #996633;
+border-bottom: none;
+border-radius: 5px 5px 0 0;
+cursor: pointer;
+color: #ffffff;
+font-weight: bold;
+text-align: center;
 }
+
 
 .custom-tab:first-child {
-  border-radius: 5px 0 0 0;
+border-radius: 5px 0 0 0;
 }
+
 
 .custom-tab:last-child {
-  border-radius: 0 5px 0 0;
+border-radius: 0 5px 0 0;
 }
+
 
 .custom-tab:hover {
-  background-color: #055159;
+background-color: #ffcc66;
 }
 
+
 .react-tabs__tab--selected {
-  background-color: #ffffff;
-  border-color: #ccc;
-  border-bottom: none;
-  border-radius: 5px 5px 0 0;
-  color: #051a3b; /* Selected tab text color */
+background-color: #996633;
+border-color: #ffaf00;
+border-bottom: none;
+border-radius: 5px 5px 0 0;
+color: #ffaf00;
 }

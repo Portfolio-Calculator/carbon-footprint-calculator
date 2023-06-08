@@ -51,36 +51,38 @@ const Result = () => {
   };
 
   return (
-  <Tabs>
-    <TabList className="custom-tab-list">
-      <Tab className="custom-tab">Facts & Figures</Tab>
-      <Tab className="custom-tab">Recommendations</Tab>
-      <Tab className="custom-tab">Something Else</Tab>
-    </TabList>
+    <div>
+      <Tabs>
+        <TabList className="custom-tab-list">
+          <Tab>Facts & Figures</Tab>
+          <Tab>Recommendations</Tab>
+          <Tab>Something Else</Tab>
+        </TabList>
 
-    <TabPanel>
-      <div>
-        <div className="container">
-          <div className="backgroundImage"></div>
-          <h1>Facts & Figures</h1>
-          <PieChart data={data}/>
-          <h2>Your Carbon Footprint</h2>
-          <div>{total} (CO2 emissions in tonnes per year)</div>
-          <ul>
-            <li>Low Carbon Footprint: 6,000 to 15,999</li>
-            <li>Medium Carbon Footprint: 16,000 to 23,999</li>
-            <li>High Carbon Footprint: 24,000 to 31,999</li>
-          </ul>
-        </div>
-      </div>
-    </TabPanel>
-    <TabPanel>
-      <Recommendations />
-    </TabPanel>
-    <TabPanel>
-      <div>hi mom</div>
-    </TabPanel>
-  </Tabs>
+        <TabPanel>
+          <div>
+            <div className="container">
+              <div className="backgroundImage"></div>
+              <h1>Facts & Figures</h1>
+              <PieChart data={data}/>
+              <h2>Your Carbon Footprint</h2>
+              <div>{total} (CO2 emissions in tonnes per year)</div>
+              <ul>
+                <li>Low Carbon Footprint: 6,000 to 15,999</li>
+                <li>Medium Carbon Footprint: 16,000 to 23,999</li>
+                <li>High Carbon Footprint: 24,000 to 31,999</li>
+              </ul>
+            </div>
+          </div>
+        </TabPanel>
+        <TabPanel>
+          <Recommendations />
+        </TabPanel>
+        <TabPanel>
+          <div>hi mom</div>
+        </TabPanel>
+      </Tabs>
+    </div>
 
   );
 };
