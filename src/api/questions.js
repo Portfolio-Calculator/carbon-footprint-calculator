@@ -6,6 +6,19 @@ const questions = [
     unit: "USD",
     icon: "/images/fuel.png",
   },
+
+  {
+    id: "vehicleType",
+    label: "What type of vehicle do you have?",
+    type: "select",
+    options: [
+      { value: "gas", label: "Gas Vehicle" },
+      { value: "hybrid", label: "Hybrid Vehicle" },
+      { value: "electric", label: "Electric Vehicle" },
+    ],
+    icon: "/images/car.png",
+  },
+
   {
     id: "electricBill",
     label: "How much do you spend on your monthly electric bill?",
@@ -45,14 +58,16 @@ const questions = [
   },
   {
     id: "flightsUnder4Hours",
-    label: "How many flights do you take per year that are under 4 hours in duration?",
+    label:
+      "How many flights do you take per year that are under 4 hours in duration?",
     type: "text",
     unit: "flights",
     icon: "/images/travel1.png",
   },
   {
     id: "flightsOver4Hours",
-    label: "How many flights do you take per year that are over 4 hours in duration?",
+    label:
+      "How many flights do you take per year that are over 4 hours in duration?",
     type: "text",
     unit: "flights",
     icon: "/images/travel.png",

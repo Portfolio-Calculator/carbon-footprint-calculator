@@ -1,4 +1,4 @@
-facts = {
+const facts = {
   1: "Did you know that the concept of carbon footprint was first introduced in the early 2000s? It serves as a measure of individual or organizational impact on climate change. By quantifying greenhouse gas emissions, it helps raise awareness and promote sustainable practices.",
   2: "Did you know that the average carbon footprint of a person in the United States is approximately 16 tons of CO2 per year? This includes emissions from transportation, electricity use, and consumption patterns. Reducing individual carbon footprints is crucial for combating climate change.",
   3: "Did you know that food production contributes significantly to carbon footprints? Meat and dairy production, in particular, account for a substantial portion of emissions due to factors like deforestation, methane from livestock, and energy-intensive agricultural practices.",
@@ -20,3 +20,5 @@ facts = {
   19: "Did you know that renewable energy sources like wind and solar power have a significantly lower carbon footprint compared to fossil fuels? Transitioning to clean energy sources is vital for reducing carbon emissions and combating climate change.",
   20: "Did you know that individual actions can make a difference in carbon footprints? Simple steps like conserving water, reducing meat consumption, using public transportation, and supporting sustainable businesses collectively contribute to a greener and more sustainable future.",
 };
+
+export default facts;

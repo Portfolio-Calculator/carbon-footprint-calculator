@@ -13,6 +13,8 @@ const QuestionnairePage = () => {
     carMileage: "",
     flightsUnder4Hours: "",
     flightsOver4Hours: "",
+    vehicleType:"",
+    electricSource:"",
   });
 
   const router = useRouter();
