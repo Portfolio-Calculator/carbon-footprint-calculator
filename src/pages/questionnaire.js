@@ -13,8 +13,8 @@ const QuestionnairePage = () => {
     carMileage: "",
     flightsUnder4Hours: "",
     flightsOver4Hours: "",
-    vehicleType:"",
-    electricSource:"",
+    vehicleType:"gas",
+    electricSource:"renewable",
   });
 
   const router = useRouter();
@@ -89,6 +89,7 @@ const QuestionnairePage = () => {
 
   return (
     <div className="container">
+      <div className="snow"></div>
       <h1 className="title">Carbon Footprint Questionnaire</h1>
 
       <div className="progress-bar">

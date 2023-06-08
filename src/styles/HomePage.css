@@ -95,3 +95,93 @@
     transform: translate(-50%, -50%) rotate(0deg);
   }
 }
+
+
+@keyframes flowerFalling {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(100vh);
+  }
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  position: relative;
+}
+@keyframes flowerFalling {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(100vh);
+  }
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  position: relative;
+}
+
+*,*:after,*:before{
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	box-sizing: border-box;
+}
+body{
+	font-family: arial;
+	font-size: 16px;
+	margin: 0;
+	background: #fff;
+	color: #000;
+}
+
+.flower, .flower:before, .flower:after {
+  position: absolute;
+  top: -650px;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+  background-image: 
+  radial-gradient(4px 4px at 100px 50px, #fe68bb , transparent), 
+  radial-gradient(6px 6px at 200px 150px, #f96ff0, transparent), 
+  radial-gradient(3px 3px at 300px 250px, #fe68bb 50%, transparent), 
+  radial-gradient(4px 4px at 400px 350px, #f47bbd 50%, transparent), 
+  radial-gradient(6px 6px at 500px 100px, #f284b4 50%, transparent), 
+  radial-gradient(3px 3px at 50px 200px, #ec9999 50%, transparent), 
+  radial-gradient(4px 4px at 150px 300px, #fe68bb 50%, transparent), 
+  radial-gradient(6px 6px at 250px 400px, #f96fa2 50%, transparent), 
+  radial-gradient(3px 3px at 350px 500px, #f7b279 50%, transparent);
+  background-size: 650px 650px;
+  animation: flower 4s linear infinite;
+  content: "";
+}
+
+.flower:after {
+  margin-left: -250px;
+  opacity: 0.5;
+  filter: blur(2px);
+  animation-duration: 6s;
+  animation-direction: reverse;
+}
+
+.flower:before {
+  margin-left: -350px;
+  opacity: 0.7;
+  filter: blur(1px);
+  animation-duration: 9s;
+  animation-direction: reverse;
+}
+
+@keyframes flower {
+  to {
+    transform: translateY(650px);
+  }
+}
