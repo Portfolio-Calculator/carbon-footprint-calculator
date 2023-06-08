@@ -5,6 +5,7 @@ import questions from "../api/questions";
 
 const QuestionnairePage = () => {
   const [isFormSubmitted, setFormSubmitted] = useState(false);
+  const [showPopup, setShowPopup] = useState(false);
   const [questionnaireData, setQuestionnaireData] = useState({
     gasBill: "",
     electricBill: "",
@@ -49,6 +50,16 @@ const QuestionnairePage = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    const unansweredQuestions = Object.keys(questionnaireData).filter(
+      (key) => questionnaireData[key] === ""
+    );
+
+    if (unansweredQuestions.length > 0) {
+      setShowPopup(true);
+      return;
+    }
+
     // Set default value to 0 for fields with empty values
     const updatedQuestionnaireData = {
       ...questionnaireData,
@@ -185,6 +196,14 @@ const QuestionnairePage = () => {
             Calculate
           </button>
         </div>
+        {showPopup && (
+          <div className="popup">
+            <div className="popup-content">
+              <p>Please complete all the questions before submitting.</p>
+              <button onClick={() => setShowPopup(false)}>OK</button>
+            </div>
+          </div>
+        )}
       </form>
     </div>
   );
