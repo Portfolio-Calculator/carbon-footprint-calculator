@@ -53,6 +53,15 @@ const Result = () => {
     ],
   };
 
+  const recommendationData = {
+    electric: electric,
+    gas: gas,
+    car: carYearlyCareMileage,
+    shortFlights: numShortFlights,
+    longFlights: numLongFlights,
+    recycle: doesRecycle,
+  };
+
   return (
     <div className="pb-44">
       <div className="backgroundImage" />

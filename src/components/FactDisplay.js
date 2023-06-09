@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleRight } from "@fortawesome/free-solid-svg-icons";
 import facts from "../api/facts";
-import "../styles/factDisplay.css";
+import "../styles/FactDisplay.css";
 
 const FactDisplay = () => {
   const [randomFact, setRandomFact] = useState("");
