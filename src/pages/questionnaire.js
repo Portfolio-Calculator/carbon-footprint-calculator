@@ -14,7 +14,7 @@ const QuestionnairePage = () => {
     flightsUnder4Hours: "",
     flightsOver4Hours: "",
     vehicleType:"gas",
-    electricSource:"renewable",
+    electricSource:"naturalGas",
   });
 
   const router = useRouter();
@@ -32,6 +32,7 @@ const QuestionnairePage = () => {
         // Allow only numeric and decimal values
         newValue = value.replace(/[^0-9.]/g, "");
       } else if (
+        name === "numberOfPeople" ||
         name === "flightsUnder4Hours" ||
         name === "flightsOver4Hours"
       ) {

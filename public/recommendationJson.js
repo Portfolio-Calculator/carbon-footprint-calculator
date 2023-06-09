@@ -1,93 +1,63 @@
-export const recommendationJson = [
-  {
-    title: "Switch to Renewable Energy Sources",
+export const recommendationJson = {
+  "renewable": {
+    title: "Using Renewable Energy",
     description:
-      "Switching to renewable energy sources can significantly reduce your carbon footprint. Consider installing solar panels or opting for a renewable energy provider.",
-    variable: "Electric",
+      "We appreciate that you are using renewable energy sources like solar or wind power. This is the most environmentally friendly option. We recommend continuing to use renewable energy and exploring ways to further reduce carbon footprint in other areas such as transportation and waste management.",
   },
-  {
-    title: "Reduce Gas Consumption",
+  coal: {
+    title: "Coal-Fired Power Plants",
     description:
-      "Reducing your gas consumption can help lower CO2 emissions. Optimize home insulation, use energy-efficient gas-powered appliances, and consider alternative heating methods like heat pumps or geothermal systems.",
-    variable: "Gas",
+      "Your electricity is generated using coal-fired power plants. We recommend considering transitioning to cleaner energy sources such as solar or wind power. Reduce electricity consumption and implement energy-efficient practices.",
   },
-  {
-    title: "Improve Fuel Efficiency",
+  petroleum: {
+    title: "Petroleum-Based Fuels",
     description:
-      "Improving your car's fuel efficiency can help reduce CO2 emissions from driving. Maintain regular car maintenance, inflate tires properly, and drive at moderate speeds to maximize fuel efficiency.",
-    variable: "Car Mileage",
+      "Your electricity is generated using petroleum-based fuels. We recommend exploring alternative energy sources like solar, wind, or geothermal power. Transitioning to cleaner energy options can significantly reduce carbon emissions.",
   },
-  {
-    title: "Minimize Air Travel",
+  naturalGas: {
+    title: "Natural Gas Power Plants",
     description:
-      "Air travel contributes significantly to CO2 emissions. Whenever possible, try to minimize air travel or opt for greener alternatives like train or bus transportation.",
-    variable: "Short Flights",
+      "Your electricity is generated using natural gas power plants. While natural gas is cleaner than coal or petroleum, it still contributes to greenhouse gas emissions. We suggest exploring renewable energy sources like solar or wind power as a greener alternative.",
   },
-  {
-    title: "Start Recycling Consistently",
+  dontKnow: {
+    title: "Unknown Electricity Source",
     description:
-      "Make a conscious effort to start recycling consistently. Set up designated recycling bins in your home or workplace and educate yourself on what can and cannot be recycled in your area.",
-    variable: "Recycle",
+      "You have a lack of information about the source of electricity. In this case, we recommend contacting the electricity provider or conducting research to determine the source of the electricity. Once the information is available, follow the appropriate recommendations based on the actual electricSource.",
   },
-  {
-    title: "Offset Long Flights",
+  gas: {
+    title: "Gas-Powered Vehicle",
     description:
-      "Long flights have a substantial carbon footprint. Consider offsetting the emissions by supporting carbon offset projects or contributing to organizations that work towards reducing CO2 emissions.",
-    variable: "Long Flights",
+      "You are currently using a gas-powered vehicle. We recommend considering a more fuel-efficient vehicle or carpooling to reduce gas consumption. Plan your trips efficiently and combine errands to minimize unnecessary driving. Regularly maintain your vehicle to ensure it operates at its optimal efficiency.",
   },
-  // Additional recommendations for each category
-  {
-    title: "Install Energy-Efficient Appliances",
+  hybrid: {
+    title: "Hybrid Vehicle",
     description:
-      "Upgrading to energy-efficient appliances can help reduce electricity consumption and CO2 emissions. Look for appliances with ENERGY STAR ratings.",
-    variable: "Electric",
+      "You are currently using a hybrid vehicle. We recommend continuing to use it as it is a more environmentally friendly option compared to traditional gas-powered vehicles. Consider driving in eco-friendly modes and optimizing your driving habits to maximize fuel efficiency. Explore options to further reduce your carbon footprint, such as using public transportation or cycling for shorter trips.",
   },
-  {
-    title: "Use Energy-Saving Practices at Home",
+  electric: {
+    title: "Electric Vehicle",
     description:
-      "Implement energy-saving practices at home, such as turning off lights when not in use, using natural light, and adjusting thermostat settings to conserve energy.",
-    variable: "Electric",
+      "You are currently using an electric vehicle. We recommend continuing to use it as it produces zero tailpipe emissions. Ensure you charge your electric vehicle using renewable energy sources for a greener charging process. Install home charging stations or take advantage of public charging infrastructure to conveniently charge your electric vehicle.",
   },
-  {
-    title: "Explore Hybrid or Electric Vehicles",
+  
+  electricPercentage: {
+    title: "Electricity Usage",
     description:
-      "Consider switching to a hybrid or electric vehicle to reduce gas consumption and lower CO2 emissions from transportation.",
-    variable: "Gas",
+      "Switch to energy-efficient appliances, consider installing solar panels or utilizing renewable energy sources, and reduce unnecessary electricity usage. Turn off lights, electronics, and appliances when not in use, and opt for energy-saving settings on devices. Be mindful of heating and cooling usage by adjusting thermostat settings and using insulation techniques to conserve energy.",
   },
-  {
-    title: "Opt for Eco-Friendly Commuting Options",
+  gasPercentage: {
+    title: "Gas Emissions",
     description:
-      "Explore eco-friendly commuting options like biking, walking, or using electric scooters to reduce gas consumption and promote sustainable transportation.",
-    variable: "Gas",
+      "Practice fuel-efficient driving techniques such as maintaining a steady speed, avoiding aggressive acceleration and braking, and reducing idle time. Explore the possibility of using alternative transportation methods for certain trips, such as public transportation, carpooling, biking, or walking. Combine multiple errands into a single trip to minimize unnecessary driving. Use navigation apps or websites to find the most efficient routes and avoid traffic congestion, further optimizing your gas usage.",
   },
-  {
-    title: "Practice Eco-Driving Techniques",
+  flightPercentage: {
+    title: "Air Travel Emissions",
     description:
-      "Adopt eco-driving techniques such as smooth acceleration, maintaining steady speeds, and avoiding unnecessary idling to improve fuel efficiency and reduce CO2 emissions.",
-    variable: "Car Mileage",
+      "Consider alternative modes of transportation for shorter trips, such as train or bus, which generally have lower carbon emissions. When flying is necessary, choose direct flights whenever possible as takeoffs and landings contribute to a significant portion of carbon emissions. Opt for airlines that have a better environmental track record and prioritize fuel-efficient aircraft.",
   },
-  {
-    title: "Support Local and Sustainable Tourism",
+  recycle: {
+    title: "Recycling",
     description:
-      "When planning trips, opt for local and sustainable tourism practices that minimize environmental impact and support communities committed to eco-friendly practices.",
-    variable: "Short Flights",
+      "Start recycling to reduce waste and minimize your environmental impact. Educate yourself about the benefits of recycling and how to properly sort and dispose of recyclable materials. Support local recycling programs and initiatives to contribute to a more sustainable community.",
   },
-  {
-    title: "Consider Virtual Meetings",
-    description:
-      "In situations where physical presence is not necessary, consider virtual meetings and conferences as an alternative to air travel, reducing CO2 emissions.",
-    variable: "Short Flights",
-  },
-  {
-    title: "Offset Carbon Emissions from Long Flights",
-    description:
-      "Offsetting carbon emissions from long flights can help neutralize the environmental impact. Support reputable carbon offset programs or projects.",
-    variable: "Long Flights",
-  },
-  {
-    title: "Promote Sustainable Aviation Practices",
-    description:
-      "Advocate for sustainable aviation practices, such as investing in cleaner aircraft technologies and supporting initiatives that aim to reduce the carbon footprint of the aviation industry.",
-    variable: "Long Flights",
-  },
-];
+};

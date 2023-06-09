@@ -17,23 +17,81 @@ const Result = () => {
   const carMileage = searchParams.get("carMileage");
   const flightsUnder4Hours = searchParams.get("flightsUnder4Hours");
   const flightsOver4Hours = searchParams.get("flightsOver4Hours");
+  const electricSource = searchParams.get("electricSource");
+  const vehicleType = searchParams.get("vehicleType");
+  const numberOfPeople = searchParams.get("numberOfPeople");
 
-  let electric = (electricBill * 105) / 1000;
-  let gas = (gasBill * 105) / 1000;
-  let carYearlyCareMileage = (carMileage * 0.79) / 1000;
+  let electricEmissions = 0;
+  let vehicleGasUsage = 0;
+  let vehicleElectricityUsage = 0;
+  let householdElectricityUsage = (electricBill * 105) / 1000;
+
+  if (vehicleType === "gas") {
+    vehicleGasUsage = (gasBill * 105) / 1000;
+    vehicleGasUsage += (carMileage * 2.31) / 1000;
+  } else if (vehicleType === "hybrid") {
+    vehicleGasUsage = (gasBill * 52) / 1000;
+    vehicleGasUsage += (carMileage * 1.56) / 1000;
+  } else if (vehicleType === "electric") {
+    vehicleElectricityUsage = (electricBill * 105) / 1000;
+    vehicleElectricityUsage += (carMileage * 0.12) / 1000;
+  }
+
+  let electric = vehicleElectricityUsage + householdElectricityUsage;
+
+  console.log("electric", electric)
+  if (electricSource === "coal") {
+    electricEmissions = electric * 0.975;
+  } else if (electricSource === "petroleum") {
+    electricEmissions = electric * 0.750;
+  } else if (electricSource === "naturalGas") {
+    electricEmissions = electric * 0.500;
+  } else if (electricSource === "dontKnow") {
+    electricEmissions = electric * 0.600;
+  }
+
+  console.log("electricSource", electricSource)
+  console.log("electricEmissions", electricEmissions)
+
+  let electricEmissionsPerPerson = electricEmissions / numberOfPeople;
+  let vehicleGasUsagePerPerson = vehicleGasUsage / numberOfPeople;
   let numShortFlights = (flightsUnder4Hours * 1100) / 1000;
   let numLongFlights = (flightsOver4Hours * 4400) / 1000;
   let totalFlights = numShortFlights + numLongFlights;
-  let doesRecycle = recycle ? 350 / 1000 : 0;
+  const doesRecycle = recycle ? 0 : 350 / 1000;
   let total =
-    electric + gas + carYearlyCareMileage + totalFlights + doesRecycle;
+    electricEmissionsPerPerson +
+    vehicleGasUsagePerPerson +
+    totalFlights +
+    doesRecycle;
 
+    console.log("electricEmissionsPerPerson", electricEmissionsPerPerson)
+  const recommendationData = {
+    electric: electricEmissionsPerPerson,
+    gas: vehicleGasUsagePerPerson,
+    flights: totalFlights,
+    recycle: doesRecycle,
+    electricSource: electricSource,
+    vehicleType: vehicleType,
+    total: total,
+  };
+console.log("sending", recommendationData)
   const data = {
-    labels: ["Electric", "Gas", "Car", "Flights", "Recycle"],
+    labels: [
+      "Electric Emissions Per Person",
+      "Vehicle Gas Usage Per Person",
+      "Flights",
+      "Recycle",
+    ],
     datasets: [
       {
         label: "Tonnes of CO2",
-        data: [electric, gas, carYearlyCareMileage, totalFlights, doesRecycle],
+        data: [
+          electricEmissionsPerPerson,
+          vehicleGasUsagePerPerson,
+          totalFlights,
+          doesRecycle,
+        ],
         backgroundColor: [
           "rgba(255, 99, 132)",
           "rgba(54, 162, 235)",
@@ -51,15 +109,6 @@ const Result = () => {
         borderWidth: 1,
       },
     ],
-  };
-
-  const recommendationData = {
-    electric: electric,
-    gas: gas,
-    car: carYearlyCareMileage,
-    shortFlights: numShortFlights,
-    longFlights: numLongFlights,
-    recycle: doesRecycle,
   };
 
   return (

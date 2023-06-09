@@ -1,0 +1,11 @@
+.recommendation-title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.recommendation-description {
+  margin-top: 10px;
+  text-align: justify;
+}

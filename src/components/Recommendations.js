@@ -1,42 +1,84 @@
 import React from "react";
 import Recommendation from "./Recommendation";
+import "../styles/Recommendations.css";
 
 function Recommendations(props) {
   const { data } = props;
-  console.log(data);
+  const {
+    electric,
+    gas,
+    flights,
+    recycle,
+    electricSource,
+    vehicleType,
+    total,
+  } = data;
 
-  const { electric, gas, car, shortFlights, longFlights, recycle } = data;
-  console.log(electric);
-  console.log(gas);
-
-  const totalCarbon = electric + gas + car + shortFlights + longFlights;
-  const electricPercentage = electric / totalCarbon;
-  const gasPercentage = gas / totalCarbon;
-  const carPercentage = car / totalCarbon;
-  const shortFlightPercentage = shortFlights / totalCarbon;
-  const longFlightPercentage = longFlights / totalCarbon;
+  const electricPercentage = electric / total;
+  const gasPercentage = gas / total;
+  const flightPercentage = flights / total;
 
   const createRecommendations = () => {
     const recommendations = [];
 
-    if (recommendations.length < 3 && carPercentage > 0.3) {
-      recommendations.push("Improve Fuel Efficiency");
+    switch (electricSource) {
+      case "renewable":
+        recommendations.push("renewable");
+        break;
+      case "coal":
+        recommendations.push("coal");
+        break;
+      case "petroleum":
+        recommendations.push("petroleum");
+        break;
+      case "naturalGas":
+        recommendations.push("naturalGas");
+        break;
+      case "dontKnow":
+        recommendations.push("dontKnow");
+        break;
     }
 
-    if (recommendations.length < 3 && recycle === 350) {
-      recommendations.push("Start Recycling Consistently");
+    switch (vehicleType) {
+      case "gas":
+        recommendations.push("gas");
+        break;
+      case "hybrid":
+        recommendations.push("hybrid");
+        break;
+      case "electric":
+        recommendations.push("electric");
+        break;
+    }
+
+    if (electricPercentage > 0.3) {
+      recommendations.push("electricPercentage");
+    }
+
+    if (gasPercentage > 0.3) {
+      recommendations.push("gasPercentage");
+    }
+
+    if (flightPercentage > 0.25) {
+      recommendations.push("flightPercentage");
+    }
+
+    if (recycle !== 0) {
+      recommendations.push("recycle");
     }
 
     return recommendations;
   };
 
   const recommendations = createRecommendations();
-  console.log(carPercentage);
   return (
-    <div>
+    <div className="recommendation-container">
       {recommendations.length > 0 ? (
-        recommendations.map((recommendation, index) => (
-          <Recommendation key={index} titleProp={recommendation} />
+        recommendations.map((recommendationKey, index) => (
+          <Recommendation
+            key={`${recommendationKey}-${index}`}
+            recommendationKey={recommendationKey}
+          />
         ))
       ) : (
         <p>No recommendations available.</p>
