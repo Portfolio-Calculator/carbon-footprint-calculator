@@ -18,12 +18,15 @@ const FactDisplay = () => {
   };
 
   return (
-    <div className="fact-container">
-      <p className="fact-text">{randomFact}</p>
-      <button className="next-button" onClick={getRandomFact}>
-        <FontAwesomeIcon icon={faAngleRight} />
-      </button>
-    </div>
+<div className="fact-container-wrapper">
+  <div className="fact-container">
+    <p className="fact-text">{randomFact}</p>
+    <button className="next-button" onClick={getRandomFact}>
+      <FontAwesomeIcon icon={faAngleRight} />
+    </button>
+  </div>
+</div>
+
   );
 };
 
