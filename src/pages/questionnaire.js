@@ -14,7 +14,7 @@ const QuestionnairePage = () => {
     flightsUnder4Hours: "",
     flightsOver4Hours: "",
     vehicleType:"gas",
-    electricSource:"renewable",
+    electricSource:"naturalGas",
   });
 
   const router = useRouter();

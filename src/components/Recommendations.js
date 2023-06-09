@@ -4,8 +4,6 @@ import "../styles/Recommendations.css";
 
 function Recommendations(props) {
   const { data } = props;
-  console.log(data);
-
   const {
     electric,
     gas,
@@ -13,14 +11,13 @@ function Recommendations(props) {
     recycle,
     electricSource,
     vehicleType,
-    totalCarbon,
+    total,
   } = data;
-  console.log(electric);
-  console.log(gas);
 
-  const electricPercentage = electric / totalCarbon;
-  const gasPercentage = gas / totalCarbon;
-  const flightPercentage = flights / totalCarbon;
+  const electricPercentage = electric / total;
+  const gasPercentage = gas / total;
+  const flightPercentage = flights / total;
+
   const createRecommendations = () => {
     const recommendations = [];
 
@@ -54,7 +51,7 @@ function Recommendations(props) {
         break;
     }
 
-    if (electricPercentage > 0.5) {
+    if (electricPercentage > 0.3) {
       recommendations.push("electricPercentage");
     }
 
@@ -74,7 +71,6 @@ function Recommendations(props) {
   };
 
   const recommendations = createRecommendations();
-  console.log("recommendations", recommendations);
   return (
     <div className="recommendation-container">
       {recommendations.length > 0 ? (

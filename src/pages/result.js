@@ -30,7 +30,7 @@ const Result = () => {
     vehicleGasUsage = (gasBill * 105) / 1000;
     vehicleGasUsage += (carMileage * 2.31) / 1000;
   } else if (vehicleType === "hybrid") {
-    vehicleGasUsage = (gasBill * 75) / 1000;
+    vehicleGasUsage = (gasBill * 52) / 1000;
     vehicleGasUsage += (carMileage * 1.56) / 1000;
   } else if (vehicleType === "electric") {
     vehicleElectricityUsage = (electricBill * 105) / 1000;
@@ -39,28 +39,33 @@ const Result = () => {
 
   let electric = vehicleElectricityUsage + householdElectricityUsage;
 
+  console.log("electric", electric)
   if (electricSource === "coal") {
-    electricEmissions = electric * 975;
+    electricEmissions = electric * 0.975;
   } else if (electricSource === "petroleum") {
-    electricEmissions = electric * 750;
+    electricEmissions = electric * 0.750;
   } else if (electricSource === "naturalGas") {
-    electricEmissions = electric * 500;
+    electricEmissions = electric * 0.500;
   } else if (electricSource === "dontKnow") {
-    electricEmissions = electric * 600;
+    electricEmissions = electric * 0.600;
   }
+
+  console.log("electricSource", electricSource)
+  console.log("electricEmissions", electricEmissions)
 
   let electricEmissionsPerPerson = electricEmissions / numberOfPeople;
   let vehicleGasUsagePerPerson = vehicleGasUsage / numberOfPeople;
   let numShortFlights = (flightsUnder4Hours * 1100) / 1000;
   let numLongFlights = (flightsOver4Hours * 4400) / 1000;
   let totalFlights = numShortFlights + numLongFlights;
-  let doesRecycle = recycle ? 350 / 1000 : 0;
+  const doesRecycle = recycle ? 0 : 350 / 1000;
   let total =
     electricEmissionsPerPerson +
     vehicleGasUsagePerPerson +
     totalFlights +
     doesRecycle;
 
+    console.log("electricEmissionsPerPerson", electricEmissionsPerPerson)
   const recommendationData = {
     electric: electricEmissionsPerPerson,
     gas: vehicleGasUsagePerPerson,
@@ -70,7 +75,7 @@ const Result = () => {
     vehicleType: vehicleType,
     total: total,
   };
-
+console.log("sending", recommendationData)
   const data = {
     labels: [
       "Electric Emissions Per Person",
