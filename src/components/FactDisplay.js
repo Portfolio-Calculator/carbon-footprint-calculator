@@ -1,7 +1,7 @@
 "use client"
 import React, { useState, useEffect } from "react";
-import { FontAwesomeIcon } from "@fontawesome/react-fontawesome";
-import { faAngleRight } from "@fontawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faAngleRight } from "@fortawesome/free-solid-svg-icons";
 import facts from "../api/facts";
 import "../styles/FactDisplay.css";
 
