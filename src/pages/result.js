@@ -79,7 +79,7 @@ const Result = () => {
             <ChartsAndFigures data={data} total={total} />
           </TabPanel>
           <TabPanel>
-            <Recommendations />
+            <Recommendations data={recommendationData} />
           </TabPanel>
           <TabPanel>
             <FactDisplay />
