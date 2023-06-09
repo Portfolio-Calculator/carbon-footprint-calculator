@@ -61,6 +61,16 @@ const Result = () => {
     totalFlights +
     doesRecycle;
 
+  const recommendationData = {
+    electric: electricEmissionsPerPerson,
+    gas: vehicleGasUsagePerPerson,
+    flights: totalFlights,
+    recycle: doesRecycle,
+    electricSource: electricSource,
+    vehicleType: vehicleType,
+    total: total,
+  };
+
   const data = {
     labels: [
       "Electric Emissions Per Person",
@@ -94,16 +104,6 @@ const Result = () => {
         borderWidth: 1,
       },
     ],
-  };
-
-  const recommendationData = {
-    electric: electricEmissionsPerPerson,
-    gas: vehicleGasUsagePerPerson,
-    shortFlights: numShortFlights,
-    longFlights: numLongFlights,
-    recycle: doesRecycle,
-    electricSource: electricSource,
-    vehicleType: vehicleType,
   };
 
   return (
