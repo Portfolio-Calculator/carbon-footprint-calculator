@@ -70,24 +70,23 @@ const Result = () => {
     vehicleType: vehicleType,
     total: total,
   };
-console.log("sending", recommendationData)
   const data = {
     labels: [
-      "Electric Emissions",
       "Vehicle Usage",
-      "Flights",
-      "Recycle",
       "Gas Emissions",
+      "Flights",
+      "Electric Emissions",
+      "Recycle",
     ],
     datasets: [
       {
         label: "Tonnes of CO2",
         data: [
-          electricEmissionsPerPerson,
           vehicleGasUsagePerPerson,
-          totalFlights,
-          doesRecycle,
           gasEmissions,
+          totalFlights,
+          electricEmissionsPerPerson,
+          doesRecycle,
         ],
         backgroundColor: [
           "rgba(255, 99, 132)",

@@ -1,5 +1,6 @@
 import React from 'react';
 import PieChart from "./PieChart";
+import BarChart from "./BarChart";
 
 const ChartsAndFigures = ({ data, total }) => {
   return (
@@ -7,6 +8,7 @@ const ChartsAndFigures = ({ data, total }) => {
       <div className="container">
         <h1>Charts & Figures</h1>
         <PieChart data={data} />
+        <BarChart data={data} />
         <h2>Your Carbon Footprint</h2>
         <div>{total} (CO2 emissions in tonnes per year)</div>
         <ul>
