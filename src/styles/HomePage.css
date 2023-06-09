@@ -32,25 +32,28 @@
 .content {
   text-align: center;
   z-index: 1;
-  margin-top: -400px; 
+  margin-top: -400px;
 }
 
 .description {
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   color: #555;
   margin-bottom: 2rem;
+  margin-left: 10rem;
+  margin-top: -6rem;
 }
 
 .calculateButton {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 12px 24px;
+  padding: 12px 12px;
   background-color: transparent;
   border: 2px solid #0b9b19;
   border-radius: 4px;
   position: relative;
   overflow: hidden;
+  margin-left: 10rem;
 }
 
 .buttonText {
@@ -149,15 +152,15 @@ body{
   bottom: 0;
   right: 0;
   z-index: -1;
-  background-image: 
-  radial-gradient(4px 4px at 100px 50px, #fe68bb , transparent), 
-  radial-gradient(6px 6px at 200px 150px, #f96ff0, transparent), 
-  radial-gradient(3px 3px at 300px 250px, #fe68bb 50%, transparent), 
-  radial-gradient(4px 4px at 400px 350px, #f47bbd 50%, transparent), 
-  radial-gradient(6px 6px at 500px 100px, #f284b4 50%, transparent), 
-  radial-gradient(3px 3px at 50px 200px, #ec9999 50%, transparent), 
-  radial-gradient(4px 4px at 150px 300px, #fe68bb 50%, transparent), 
-  radial-gradient(6px 6px at 250px 400px, #f96fa2 50%, transparent), 
+  background-image:
+  radial-gradient(4px 4px at 100px 50px, #fe68bb , transparent),
+  radial-gradient(6px 6px at 200px 150px, #f96ff0, transparent),
+  radial-gradient(3px 3px at 300px 250px, #fe68bb 50%, transparent),
+  radial-gradient(4px 4px at 400px 350px, #f47bbd 50%, transparent),
+  radial-gradient(6px 6px at 500px 100px, #f284b4 50%, transparent),
+  radial-gradient(3px 3px at 50px 200px, #ec9999 50%, transparent),
+  radial-gradient(4px 4px at 150px 300px, #fe68bb 50%, transparent),
+  radial-gradient(6px 6px at 250px 400px, #f96fa2 50%, transparent),
   radial-gradient(3px 3px at 350px 500px, #f7b279 50%, transparent);
   background-size: 650px 650px;
   animation: flower 4s linear infinite;

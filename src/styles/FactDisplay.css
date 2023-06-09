@@ -21,7 +21,7 @@
     margin-right: 10px;
     background-color: transparent;
   }
-  
+
   .next-button {
     background-color: transparent;
     border: none;
@@ -30,10 +30,9 @@
     color: #888888;
     transition: color 0.3s;
   }
-  
+
   .next-button:hover {
     color: #333333;
     transform: scale(1.1);
   }
-  
-  
+

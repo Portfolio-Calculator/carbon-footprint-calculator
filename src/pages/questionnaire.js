@@ -90,6 +90,7 @@ const QuestionnairePage = () => {
 
   return (
     <div className="container">
+      <div className="backgroundImage"></div>
       <div className="snow"></div>
       <h1 className="title">Carbon Footprint Questionnaire</h1>
 
