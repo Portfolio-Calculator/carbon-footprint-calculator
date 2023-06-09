@@ -25,36 +25,32 @@ const Result = () => {
   let vehicleGasUsage = 0;
   let vehicleElectricityUsage = 0;
   let householdElectricityUsage = (electricBill * 105) / 1000;
+  let gasEmissions = (gasBill * 105) / 1000;
 
   if (vehicleType === "gas") {
-    vehicleGasUsage = (gasBill * 105) / 1000;
     vehicleGasUsage += (carMileage * 2.31) / 1000;
   } else if (vehicleType === "hybrid") {
-    vehicleGasUsage = (gasBill * 52) / 1000;
     vehicleGasUsage += (carMileage * 1.56) / 1000;
   } else if (vehicleType === "electric") {
-    vehicleElectricityUsage = (electricBill * 105) / 1000;
     vehicleElectricityUsage += (carMileage * 0.12) / 1000;
   }
 
-  let electric = vehicleElectricityUsage + householdElectricityUsage;
-
-  console.log("electric", electric)
   if (electricSource === "coal") {
-    electricEmissions = electric * 0.975;
+    electricEmissions = householdElectricityUsage * 0.975;
+    vehicleElectricityUsage = vehicleElectricityUsage * 0.975;
   } else if (electricSource === "petroleum") {
-    electricEmissions = electric * 0.750;
+    electricEmissions = householdElectricityUsage * 0.750;
+    vehicleElectricityUsage = vehicleElectricityUsage * 0.750;
   } else if (electricSource === "naturalGas") {
-    electricEmissions = electric * 0.500;
+    electricEmissions = householdElectricityUsage * 0.500;
+    vehicleElectricityUsage = vehicleElectricityUsage * 0.500;
   } else if (electricSource === "dontKnow") {
-    electricEmissions = electric * 0.600;
+    electricEmissions = householdElectricityUsage * 0.600;
+    vehicleElectricityUsage = vehicleElectricityUsage * 0.600;
   }
 
-  console.log("electricSource", electricSource)
-  console.log("electricEmissions", electricEmissions)
-
-  let electricEmissionsPerPerson = electricEmissions / numberOfPeople;
-  let vehicleGasUsagePerPerson = vehicleGasUsage / numberOfPeople;
+  let electricEmissionsPerPerson = electricEmissions / numberOfPeople; // changed to only household electrical usage
+  let vehicleGasUsagePerPerson = (vehicleGasUsage + vehicleElectricityUsage) / numberOfPeople; // changed to electric and gas usage
   let numShortFlights = (flightsUnder4Hours * 1100) / 1000;
   let numLongFlights = (flightsOver4Hours * 4400) / 1000;
   let totalFlights = numShortFlights + numLongFlights;
@@ -65,7 +61,6 @@ const Result = () => {
     totalFlights +
     doesRecycle;
 
-    console.log("electricEmissionsPerPerson", electricEmissionsPerPerson)
   const recommendationData = {
     electric: electricEmissionsPerPerson,
     gas: vehicleGasUsagePerPerson,
@@ -78,10 +73,11 @@ const Result = () => {
 console.log("sending", recommendationData)
   const data = {
     labels: [
-      "Electric Emissions Per Person",
-      "Vehicle Gas Usage Per Person",
+      "Electric Emissions",
+      "Vehicle Usage",
       "Flights",
       "Recycle",
+      "Gas Emissions",
     ],
     datasets: [
       {
@@ -91,6 +87,7 @@ console.log("sending", recommendationData)
           vehicleGasUsagePerPerson,
           totalFlights,
           doesRecycle,
+          gasEmissions,
         ],
         backgroundColor: [
           "rgba(255, 99, 132)",
