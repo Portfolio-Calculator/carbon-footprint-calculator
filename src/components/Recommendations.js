@@ -16,13 +16,22 @@ function Recommendations(props) {
   const shortFlightPercentage = shortFlights / totalCarbon;
   const longFlightPercentage = longFlights / totalCarbon;
 
-  const recommendations = [];
+  const createRecommendations = () => {
+    const recommendations = [];
 
-  if (recycle === 350) {
-    recommendations.push("Start Recycling Consistently");
-  }
+    if (recommendations.length < 3 && carPercentage > 0.3) {
+      recommendations.push("Improve Fuel Efficiency");
+    }
 
-  console.log(recommendations);
+    if (recommendations.length < 3 && recycle === 350) {
+      recommendations.push("Start Recycling Consistently");
+    }
+
+    return recommendations;
+  };
+
+  const recommendations = createRecommendations();
+  console.log(carPercentage);
   return (
     <div>
       {recommendations.length > 0 ? (
