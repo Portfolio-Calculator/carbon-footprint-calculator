@@ -23,7 +23,19 @@ function Recommendations(props) {
       recommendations.push("Improve Fuel Efficiency");
     }
 
-    if (recommendations.length < 3 && recycle === 350) {
+    if (recommendations.length < 3 && electricPercentage > 0.3) {
+      recommendations.push("Switch to Renewable Energy Sources");
+    }
+
+    if (recommendations.length < 3 && gasPercentage > 0.3) {
+      recommendations.push("Reduce Gas Consumption")
+    }
+
+    if (recommendations.length < 3 && shortFlightPercentage + longFlightPercentage > .25) {
+      recommendations.push("Minimize Air Travel")
+    }
+
+    if (recommendations.length < 3 && recycle !== 0) {
       recommendations.push("Start Recycling Consistently");
     }
 
