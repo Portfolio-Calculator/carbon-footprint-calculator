@@ -5,6 +5,7 @@
   justify-content: center;
   height: 90vh;
   text-align: center;
+  position: relative;
 }
 
 .backgroundImage {
@@ -45,7 +46,7 @@
     radial-gradient(4px 10px ellipse at 150px 300px, #ffcc66 50%, transparent),
     radial-gradient(6px 15px ellipse at 250px 400px, #ff9933 50%, transparent),
     radial-gradient(3px 8px ellipse at 350px 500px, #cc9900 50%, transparent);
- 
+
   background-size: 650px 650px;
   animation: leaves 6s linear infinite;
   content: "";
@@ -75,4 +76,49 @@
   100% {
     transform: translateY(650px) rotate(45deg); /* End at 360-degree rotation */
   }
+}
+
+
+.custom-tab-list {
+  display: flex;
+  margin-bottom: 10px;
+  justify-content: center; 
+}
+
+.custom-tab {
+  padding: 10px 20px;
+  background-color: #7ac943;
+  border: 1px solid #ccc;
+  border-bottom: none;
+  border-radius: 5px 5px 0 0;
+  cursor: pointer;
+  color: #ffffff; /* Tab text color */
+  font-weight: bold; /* Make the tab text bold */
+  text-align: center; /* Center align the tab text */
+}
+
+.custom-tab:first-child {
+  border-radius: 5px 0 0 0;
+}
+
+.custom-tab:last-child {
+  border-radius: 0 5px 0 0;
+}
+
+.custom-tab:hover {
+  background-color: #247b04;
+}
+
+.react-tabs__tab--selected {
+  background-color: #ffffff;
+  border-color: #ccc;
+  border-bottom: none;
+  border-radius: 5px 5px 0 0;
+  color: #5f984a; /* Selected tab text color */
+}
+
+.tabs-container {
+  margin-top: 50px;
+  max-width: 75%;
+  margin: 0 auto;
 }
