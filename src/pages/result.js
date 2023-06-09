@@ -53,6 +53,7 @@ const Result = () => {
     <div>
       <div className="container">
         <div className="backgroundImage"></div>
+        <div className="leaves"></div>
         <h1>Result</h1>
         <p>Gas Bill: {gasBill}</p>
         <p>Electric Bill: {electricBill}</p>
