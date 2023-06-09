@@ -23,7 +23,7 @@ ChartJS.register(
 export default function BarChart({ data }) {
 
   return (
-    <div style={{ width: "40%", height: "auto" }}>
+    <div style={{ width: "35%", height: "auto" }}>
       <Bar data={data} />
       {/* <Bar data={data} /> */}
     </div>
