@@ -4,12 +4,11 @@ import "../styles/HomePage.css";
 const HomePage = () => {
   return (
     <div className="container">
-      <div className="backgroundImage"></div>
-      <div className="flower">
-      </div>
+      <div className="backgroundImage" />
+      <div className="flower" />
       <div className="content">
         {/* <h1 className="welcometitle">Welcome to the Carbon Footprint Calculator!</h1> */}
-        <p className="description">
+        <p className="flex justify-center description">
           Take your first step towards a sustainable future.
         </p>
         <Link href="/questionnaire">
