@@ -13,54 +13,66 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url('/images/fall_background.jpg');
+  background-image: url("/images/autumn.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   /* background-size: 100% 100%; */
-  background-position: top center;
+  background-position: center center;
   opacity: 0.7;
   z-index: -1;
 }
 
-.custom-tab-list {
-display: flex;
-margin-bottom: 10px;
-justify-content: center;
+.leaves,
+.leaves:before,
+.leaves:after {
+  position: absolute;
+  top: -650px;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+  background-image: radial-gradient(
+      4px 10px ellipse at 100px 50px,
+      #f7d946,
+      transparent
+    ),
+
+    radial-gradient(6px 15px ellipse at 200px 150px, #ff9933, transparent),
+    radial-gradient(3px 8px ellipse at 300px 250px, #ffcc33 50%, transparent),
+    radial-gradient(4px 10px ellipse at 400px 350px, #cc9900 50%, transparent),
+    radial-gradient(6px 15px ellipse at 500px 100px, #ff6600 50%, transparent),
+    radial-gradient(3px 8px ellipse at 50px 200px, #ff9900 50%, transparent),
+    radial-gradient(4px 10px ellipse at 150px 300px, #ffcc66 50%, transparent),
+    radial-gradient(6px 15px ellipse at 250px 400px, #ff9933 50%, transparent),
+    radial-gradient(3px 8px ellipse at 350px 500px, #cc9900 50%, transparent);
+
+  background-size: 650px 650px;
+  animation: leaves 6s linear infinite;
+  content: "";
+  transform: rotate(45deg);
 }
 
-
-.custom-tab {
-padding: 10px 20px;
-background-color: #ffaf00;
-border: 1px solid #996633;
-border-bottom: none;
-border-radius: 5px 5px 0 0;
-cursor: pointer;
-color: #ffffff;
-font-weight: bold;
-text-align: center;
+.leaves:after {
+  margin-left: -250px;
+  opacity: 0.5;
+  filter: blur(2px);
+  animation-duration: 6s;
+  animation-direction: reverse;
 }
 
-
-.custom-tab:first-child {
-border-radius: 5px 0 0 0;
+.leaves:before {
+  margin-left: -350px;
+  opacity: 0.7;
+  filter: blur(1px);
+  animation-duration: 9s;
+  animation-direction: reverse;
 }
 
-
-.custom-tab:last-child {
-border-radius: 0 5px 0 0;
-}
-
-
-.custom-tab:hover {
-background-color: #ffcc66;
-}
-
-
-.react-tabs__tab--selected {
-background-color: #996633;
-border-color: #ffaf00;
-border-bottom: none;
-border-radius: 5px 5px 0 0;
-color: #ffaf00;
+@keyframes leaves {
+  0% {
+    transform: translateY(0px) rotate(45deg); /* Start at 0-degree rotation */
+  }
+  100% {
+    transform: translateY(650px) rotate(45deg); /* End at 360-degree rotation */
+  }
 }
