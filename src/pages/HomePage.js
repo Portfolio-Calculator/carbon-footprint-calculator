@@ -5,6 +5,8 @@ const HomePage = () => {
   return (
     <div className="container">
       <div className="backgroundImage"></div>
+      <div className="flower">
+      </div>
       <div className="content">
         {/* <h1 className="welcometitle">Welcome to the Carbon Footprint Calculator!</h1> */}
         <p className="description">
@@ -15,8 +17,7 @@ const HomePage = () => {
             <span className="buttonText">Calculate Your Carbon Footprint</span>
             <div className="icon"></div>
           </button>
-        </Link>
-      </div>
+        </Link></div>
     </div>
   );
 };

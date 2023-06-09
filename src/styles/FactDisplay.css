@@ -1,0 +1,32 @@
+.fact-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .fact-text {
+    font-size: 18px;
+    text-align: center;
+    margin-right: 10px;
+    background-color: transparent;
+  }
+  
+  .next-button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 24px;
+    color: #888888;
+    transition: color 0.3s;
+  }
+  
+  .next-button:hover {
+    color: #333333;
+    transform: scale(1.1);
+  }
+  
+  
