@@ -1,5 +1,12 @@
 const questions = [
   {
+    id: "numberOfPeople",
+    label: "How many people are sharing the electricity, gas, and vehicle usage?",
+    type: "text",
+    unit: "numberOfPeople",
+    icon: "/images/group.png",
+  },
+  {
     id: "gasBill",
     label: "How much do you spend on your monthly gas bill?",
     type: "text",

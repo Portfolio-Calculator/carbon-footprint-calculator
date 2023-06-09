@@ -32,6 +32,7 @@ const QuestionnairePage = () => {
         // Allow only numeric and decimal values
         newValue = value.replace(/[^0-9.]/g, "");
       } else if (
+        name === "numberOfPeople" ||
         name === "flightsUnder4Hours" ||
         name === "flightsOver4Hours"
       ) {
