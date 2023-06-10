@@ -1,7 +1,7 @@
 
 # Carbon Footprint Calculator
 
-Calculate your Carbon Footpring! [Deployed Here](https://carbon-footprint-calculator-two.vercel.app/)
+Calculate your Carbon Footprint! [Deployed Here](https://carbon-footprint-calculator-two.vercel.app/)
 
 
 ## Author
