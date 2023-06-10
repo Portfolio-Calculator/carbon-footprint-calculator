@@ -114,7 +114,7 @@ const Result = () => {
 
       <Tabs selectedIndex={activeTab} onSelect={(index) => setActiveTab(index)}>
         <TabList className="custom-tab-list">
-          <Tab className="custom-tab">Facts & Figures</Tab>
+          <Tab className="custom-tab">Your Carbon Footprint</Tab>
           <Tab className="custom-tab">Recommendations</Tab>
           <Tab className="custom-tab">Facts</Tab>
         </TabList>
